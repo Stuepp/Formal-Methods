@@ -11,4 +11,4 @@
   - (b) Agora, implemente uma estratégia (semelhante ao que fizemos no jogo da velha) para que essa invariante seja satisfeita.
     - A estratégia é bem simples: quando o pokemon tiver vantagem elemental, ele deve usar o ataque elemental.
 ## 3. Adicione um novo pokemon do tipo elétrico conforme a tabela de modificadores de dano a seguir
- <img id="OkemonTypeChart" alt="Pokemon Type Chart" src='https://github.com/Stuepp/Formal-Methods/blob/main/pokemon/pokemon-type-chart.jpg' style="margin: auto;" />
+ <img id="OkemonTypeChart" alt="Pokemon Type Chart" src='https://github.com/Stuepp/Formal-Methods/blob/main/pokemon/pokemon-type-chart.jpg' />
