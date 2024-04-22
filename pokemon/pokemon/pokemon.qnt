@@ -95,7 +95,7 @@ module pokemon {
       attacker.hp > 0,
       receiver.hp > 0,
       pure val prevHP = receiver.hp
-      
+      // Exercise 2 b
       match damage_modifier(attacker, receiver) {
         | SuperEffective => elemental_attack(attacker, receiver)
         | NotVeryEffective => tackle(attacker ,receiver)
