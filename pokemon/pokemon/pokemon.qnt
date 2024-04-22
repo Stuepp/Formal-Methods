@@ -20,17 +20,17 @@ module pokemon {
     { name: "Pikachu", hp: 35, speed: 90, team: "", pokemon_type: Electric}
   )
 
+  // Exercise 1
   var lastAttack : Option[{attacker: Pokemon, receiver: Pokemon, attack: str, dmg: int}] //{ attacker: Pokemon, receiver: Pokemon, attack: str, damage: int } ; {attacker, receiver, attack: str. (prevHP - receiver.hp)}
-  
-  val fogoGanhaPlanta = {
-    //verificar se existe
+  // Exercise 2
+  val fireBeatsGrass = {
     match lastAttack {
-      | Some(l) => l.attacker.pokemon_type == Fire  and l.receiver.pokemon_type == Grass and pokemons.get(l.receiver.team).hp <= 0
+      | Some(last) => last.attacker.pokemon_type == Fire  and last.receiver.pokemon_type == Grass and pokemons.get(last.receiver.team).hp <= 0
       | None => false
     }
   }
-  val fogonaoganhaplanta = not(fogoGanhaPlanta)
-  
+  val fireDontBeatsGrass = not(fireBeatsGrass)
+  //Exercise 3 is found in lines 5, 20 and 44  
 
   var pokemons: str -> Pokemon
   var next_team: str
