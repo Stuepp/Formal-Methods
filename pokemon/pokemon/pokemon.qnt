@@ -22,15 +22,15 @@ module pokemon {
 
   // Exercise 1
   var lastAttack : Option[{attacker: Pokemon, receiver: Pokemon, attack: str, dmg: int}] //{ attacker: Pokemon, receiver: Pokemon, attack: str, damage: int } ; {attacker, receiver, attack: str. (prevHP - receiver.hp)}
-  // Exercise 2
-  val fireBeatsGrass = {
+  // Exercise 2 a - check again
+  val grassBeatsFire = {
     match lastAttack {
-      | Some(last) => last.attacker.pokemon_type == Fire  and last.receiver.pokemon_type == Grass and pokemons.get(last.receiver.team).hp <= 0
+      | Some(last) => last.attacker.pokemon_type == Grass  and last.receiver.pokemon_type == Fire and pokemons.get(last.receiver.team).hp <= 0
       | None => false
     }
   }
-  val fireDontBeatsGrass = not(fireBeatsGrass)
-  //Exercise 3 is found in lines 5, 20 and 44  
+  val fireBeatsGrass = not(grassBeatsFire)
+  //Exercise 3 is found in lines 5, 20 and 44
 
   var pokemons: str -> Pokemon
   var next_team: str
@@ -95,10 +95,12 @@ module pokemon {
       attacker.hp > 0,
       receiver.hp > 0,
       pure val prevHP = receiver.hp
-      any {
-        tackle(attacker ,receiver),
-        elemental_attack(attacker, receiver),
-      }
+      
+      match damage_modifier(attacker, receiver) {
+        | SuperEffective => elemental_attack(attacker, receiver)
+        | NotVeryEffective => tackle(attacker ,receiver)
+        | Normal => any{ tackle(attacker ,receiver), elemental_attack(attacker, receiver) }
+      }      
     }
   }
 
