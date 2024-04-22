@@ -28,5 +28,3 @@ tools. For the moment, you can do one of the following:
    ```
    import basicSpells.* from "./basicSpells"
    ```
-
-## Status: Done
