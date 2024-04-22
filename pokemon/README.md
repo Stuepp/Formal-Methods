@@ -1,5 +1,5 @@
 ## 1. Na especificação base, ao examinar uma execução, é um pouco difícil entender o que aconteceu de um estado pra outro. Introduza uma variável que, a cada estado, grave qual foi o último ataque feitos, de forma a facilitar a compreensão de uma execução.
-  .a em Quint, sem tipo soma: { attacker: Pokemon, receiver: Pokemon, attack: str, damage: int }
+  (a) em Quint, sem tipo soma: { attacker: Pokemon, receiver: Pokemon, attack: str, damage: int }
     • Neste caso, você vai precisar inventar valores arbitrários para essa variável no estado inicial
   (b) em Quint, com tipo soma: Option[{ attacker: Pokemon, receiver: Pokemon, attack: str, damage: int }]
     • O tipo Option é definido por Option[a] = Some(a) | None
